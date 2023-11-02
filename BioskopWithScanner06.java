@@ -14,6 +14,7 @@ public class BioskopWithScanner06 {
         int baris;
         int kolom;
 
+        //Menambah Menu
         do{
             System.out.println ("Pilih Menu");
             System.out.println ("1. Input Data Penonton");
@@ -23,6 +24,7 @@ public class BioskopWithScanner06 {
             int choice = sc.nextInt();
             sc.nextLine();
 
+        //Input Data Penonton
         switch (choice){
             case 1:
             System.out.print("Masukkan nama :");
@@ -33,8 +35,10 @@ public class BioskopWithScanner06 {
             kolom = sc.nextInt();
             sc.nextLine();
 
+            //Baris Tidak Tersedia
             if (baris < 1 ||baris > penonton.length || kolom < 1 || kolom > penonton[0].length ){
             System.out.println ("Nomor baris dan kolom tidak tersedia");
+            //Warning Kursi Terisi
             } else if (penonton [baris-1][kolom-1] != null){
             System.out.println ("Kursi sudah terisi, silahkan pilih kursi lain");
             } else {
@@ -46,11 +50,21 @@ public class BioskopWithScanner06 {
             if (next.equalsIgnoreCase("n")){
                 break;
             } break;
+
+            // Menampilkan daftar penonton
         case 2 :
             for (int i = 0; i < penonton.length; i++) {
+                //Jika null akan ditampilkan ***
+                for (int j = 0; j < penonton[i].length; i++) {
+                    if (penonton[i][j]== null){
+                        penonton[i][j]= "****";
+                    }
+                }
                 System.out.println ("Penonton pada baris ke-" + (i+1) + ":"+ String.join(",", penonton[i]));
             }
                 break;
+
+                //Exit
             case 3 :
             System.out.print("Ingin keluar? (y/n)");
             exit = sc.nextLine();
