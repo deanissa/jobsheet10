@@ -35,7 +35,9 @@ public class BioskopWithScanner06 {
 
             if (baris < 1 ||baris > penonton.length || kolom < 1 || kolom > penonton[0].length ){
             System.out.println ("Nomor baris dan kolom tidak tersedia");
-            }else{
+            } else if (penonton [baris-1][kolom-1] != null){
+            System.out.println ("Kursi sudah terisi, silahkan pilih kursi lain");
+            } else {
             penonton [baris-1][kolom-1]= nama;
             }
             System.out.print("Input penonton lainnya? (y/n)");
