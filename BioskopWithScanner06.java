@@ -55,7 +55,7 @@ public class BioskopWithScanner06 {
         case 2 :
             for (int i = 0; i < penonton.length; i++) {
                 //Jika null akan ditampilkan ***
-                for (int j = 0; j < penonton[i].length; i++) {
+                for (int j = 0; j < penonton[i].length; j++) {
                     if (penonton[i][j]== null){
                         penonton[i][j]= "****";
                     }
